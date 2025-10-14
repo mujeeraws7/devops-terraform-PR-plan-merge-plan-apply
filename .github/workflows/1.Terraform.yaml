@@ -4,10 +4,10 @@ on:
   pull_request:
     branches:
       - main
+    types: [closed]
   push:
     branches:
       - main
-
 permissions:
   contents: read
   id-token: write
@@ -74,3 +74,23 @@ jobs:
 
       - name: Terraform Apply (with confirmation)
         run: terraform apply -auto-approve
+  delete-branch:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete feature branch after merge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [[ "$BRANCH" != "main" && "$BRANCH" != "master" ]]; then
+            echo "Deleting branch: $BRANCH from $REPO"
+            curl -X DELETE \
+              -H "Authorization: token $GITHUB_TOKEN" \
+              -H "Accept: application/vnd.github.v3+json" \
+              https://api.github.com/repos/$REPO/git/refs/heads/$BRANCH
+          else
+            echo "Not deleting protected branch: $BRANCH"
+          fi
