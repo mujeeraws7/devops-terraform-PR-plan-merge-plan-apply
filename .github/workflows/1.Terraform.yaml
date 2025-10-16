@@ -1,19 +1,7 @@
 name: Terraform CI/CD
 
 on:
-  pull_request:
-    branches:
-      - main
-  pull_request:
-    types: [closed]
-  push:
-    branches:
-      - main
-permissions:
-  contents: read
-  id-token: write
-  pull-requests: write
-
+  workflow_dispatch: 
 jobs:
   terraform-plan:
     name: Terraform Plan
