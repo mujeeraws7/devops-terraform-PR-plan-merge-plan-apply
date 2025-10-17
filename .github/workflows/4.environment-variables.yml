@@ -1,17 +1,19 @@
 name: 4.environment-variables
 on:
-  workflow_dispath:
+  workflow_dispatch:
 env:
   WORKFLOW_VARIABLE: I_AM_WORKLOW_VARIABLE
 jobs:
   job_using: 
-  env:
+    runs-on: ubuntu-latest
+    env:
       JOBS_VARIABLE: I_AM_JOB_VARIBALE 
-  runs-on: ubuntu:latest
-  steps:
-    - name: this is variable printing 
-      env:
-        STEPS_VARIABLE: I_AM_STEPS_VARIABLES 
-      run: |
-        echo "print $JOBS_VARIABLE"
+    steps:
+      - name: this is variable printing 
+        env:
+          STEPS_VARIABLE: I_AM_STEPS_VARIABLES 
+        run: |
+          echo "print $WORKFLOW_VARIABLE"
+          echo "print $JOBS_VARIABLE"
+          echo "print $STEPS_VARIABLE"
 
