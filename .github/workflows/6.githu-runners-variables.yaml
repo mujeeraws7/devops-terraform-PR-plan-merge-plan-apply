@@ -7,7 +7,8 @@ jobs:
     steps: 
       - name: printing github variables 
         run : |
-          echo "printing ${{ vars.RUNNER_NAME }}"
-          echo "printing ${{ vars.RUNNER_OS }}"
+          echo "printing ${{ runner.name }}"
+          echo "printing ${{ runner.os }}"
+          echo "printing ${{ github.workflow }}"
       
     
