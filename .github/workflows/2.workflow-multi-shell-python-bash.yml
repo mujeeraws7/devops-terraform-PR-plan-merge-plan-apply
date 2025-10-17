@@ -1,15 +1,15 @@
 name: 2.workflow-multi-shell-python-bash
 on:
   workflow_dispatch: 
-jobds: 
+jobs: 
   multi-shells:
-  runs-on: ubuntu-latest 
-  steps:
-	  - name: printing the shell 
+    runs-on: ubuntu-latest 
+    steps:
+      - name: printing the shell 
 	    run: echo $SHELL
   python-shells: 
-  runs-on: ubuntu-latest
-  steps:
+    runs-on: ubuntu-latest
+    steps:
 	  - name: printing the shell 
 		shell: python
 		run: print("Hello world")
