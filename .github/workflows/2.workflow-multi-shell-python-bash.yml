@@ -5,9 +5,10 @@ jobs:
   multi-shells:
     runs-on: ubuntu-latest 
     steps:
-	  - run: echo "testing"
+      - run: echo $SHELL
   python-shells: 
     runs-on: ubuntu-latest
     steps:
-	  - run: print("Hello world")
-	    shell: python
+      - run: print("Hello world")
+        shell: python   
+
