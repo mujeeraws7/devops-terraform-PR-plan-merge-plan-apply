@@ -10,5 +10,5 @@ jobs:
           echo "printing ${{ runner.name }}"
           echo "printing ${{ runner.os }}"
           echo "printing ${{ github.workflow }}"
-      
+          echo "printing ${{ github.action.path }}"
     
