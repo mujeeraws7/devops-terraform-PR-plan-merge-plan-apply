@@ -1,0 +1,9 @@
+name: 1.mujeer-hello-workflow 
+on: 
+  workflow_dispatch:
+jobs:
+  mujeer_job:
+    runs-on: ubuntu-24.04 
+    steps:
+      - name: printing mujeer 
+        run: echo "this is mujeer hello world work flow"
