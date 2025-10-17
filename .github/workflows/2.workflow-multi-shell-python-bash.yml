@@ -5,11 +5,9 @@ jobs:
   multi-shells:
     runs-on: ubuntu-latest 
     steps:
-      - name: printing the shell 
-	    run: echo $SHELL
+	  - run: echo "testing"
   python-shells: 
     runs-on: ubuntu-latest
     steps:
-	  - name: printing the shell 
-		shell: python
-		run: print("Hello world")
+	  - run: print("Hello world")
+	    shell: python
