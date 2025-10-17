@@ -1,0 +1,13 @@
+name: 6.githu-runners-variables
+on:
+  workflow_dispatch: 
+jobs: 
+  running-job: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: printing github variables 
+        run : |
+          echo "printing ${{ vars.RUNNER_NAME }}"
+          echo "printing ${{ vars.RUNNER_OS }}"
+      
+    
