@@ -22,8 +22,3 @@ jobs:
     - job-3
     steps:
        - run: echo "this is job-4 4th jobs"
-
-		  
-		  
-	                
-	  
