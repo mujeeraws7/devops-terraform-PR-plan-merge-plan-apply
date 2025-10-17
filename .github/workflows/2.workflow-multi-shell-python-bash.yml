@@ -11,5 +11,5 @@ jobds:
   runs-on: ubuntu-latest
   steps:
 	  - name: printing the shell 
-		  shell: python
-		  run: print("Hello world")
+		shell: python
+		run: print("Hello world")
