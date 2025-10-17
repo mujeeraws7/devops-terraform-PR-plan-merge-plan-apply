@@ -1,4 +1,4 @@
-name: 2.workflow-multi-shell-python-bash
+name: 2.workflow-multi-shell-python-bash-using-shell
 on:
   workflow_dispatch: 
 jobs: 
