@@ -4,16 +4,31 @@ on:
 env:
   WORKFLOW_VARIABLE: I_AM_WORKLOW_VARIABLE
 jobs:
-  job_using: 
+  job_using-1: 
     runs-on: ubuntu-latest
     env:
-      JOBS_VARIABLE: I_AM_JOB_VARIBALE 
+      JOBS_VARIABLE_1: I_AM_JOB_VARIBALE 
     steps:
       - name: this is variable printing 
         env:
-          STEPS_VARIABLE: I_AM_STEPS_VARIABLES 
+          STEPS_VARIABLE_1: I_AM_STEPS_VARIABLES_1
         run: |
           echo "print $WORKFLOW_VARIABLE"
           echo "print $JOBS_VARIABLE"
           echo "print $STEPS_VARIABLE"
+  job_using-2: 
+    runs-on: ubuntu-latest
+    env:
+      JOBS_VARIABLE_2: I_AM_JOB_VARIBALE_2
+    steps:
+      - name: this is variable printing 
+        env:
+          STEPS_VARIABLE_2: I_AM_STEPS_VARIABLES_2
+        run: |
+          echo "print WORKFLOW_VARIABLE $WORKFLOW_VARIABLE_1"
+          echo "print JOBS_VARIABLE_1 $JOBS_VARIABLE_1"
+          echo "print STEPS_VARIABLE_1 $STEPS_VARIABLE_1"
+          echo "print WORKFLOW_VARIABLE_2 $WORKFLOW_VARIABLE_2"
+          echo "print JOBS_VARIABLE_2 $JOBS_VARIABLE_2"
+          echo "print STEPS_VARIABLE_2 $STEPS_VARIABLE_2"
 
