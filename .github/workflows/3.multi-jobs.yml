@@ -1,4 +1,4 @@
-name: 3.multi-jobs 
+name: 3.multi-jobs-using-needs
 on: 
   workflow_dispatch: 
 jobs:
